@@ -24,7 +24,7 @@ class TelegramService:
     def send_message(self, message: str) -> None:
         payload = {
             "chat_id": self.chat_id,
-            "message_thread_id": 78,
+            "message_thread_id": "2",
             "text": message,
             "parse_mode": self.parse_mode,
         }
@@ -36,7 +36,7 @@ class TelegramService:
                 response.text,
             )
             return
-        logger.info("Message sent")
+        logger.info(f"Message sent: {payload}")
 
     def send_file(self, file_path: str, caption: str | None) -> None:
         if not os.path.exists(file_path):
