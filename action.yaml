@@ -1,9 +1,9 @@
-name: 'CI Telegram Sender'
-description: 'Send messages and files to Telegram chat'
+name: 'CI Telegram Sender (Forced)'
+description: 'Send messages and files to Telegram chat and Thread in Chat'
 
 branding:
   icon: 'alert-triangle'
-  color: 'blue'
+  color: 'green'
 
 runs:
   using: 'docker'
