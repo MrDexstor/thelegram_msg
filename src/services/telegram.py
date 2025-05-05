@@ -28,6 +28,7 @@ class TelegramService:
             "text": message,
             "parse_mode": self.parse_mode,
         }
+        logger.info("ПЭЙЛОАД: %s", payload)
         response = requests.post(self.base_url + "/sendMessage", data=payload)
         if response.status_code != HTTPStatus.OK:
             logger.error(
