@@ -13,6 +13,7 @@ logger = get_logger(__name__)
 class TelegramService:
     def __init__(self):
         self.chat_id = telegram_settings.chat_id
+        self.message_thread_id = telegram_settings.message_thread_id
         self.parse_mode = (
             None
             if not payload_settings.parse_mode
@@ -23,6 +24,7 @@ class TelegramService:
     def send_message(self, message: str) -> None:
         payload = {
             "chat_id": self.chat_id,
+            "message_thread_id": self.message_thread_id,
             "text": message,
             "parse_mode": self.parse_mode,
         }
