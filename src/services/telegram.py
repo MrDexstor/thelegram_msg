@@ -36,7 +36,7 @@ class TelegramService:
                 response.text,
             )
             return
-        logger.info(f"Message sent: {payload}")
+        logger.info(response.json)
 
     def send_file(self, file_path: str, caption: str | None) -> None:
         if not os.path.exists(file_path):
