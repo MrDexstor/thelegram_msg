@@ -24,11 +24,10 @@ class TelegramService:
     def send_message(self, message: str) -> None:
         payload = {
             "chat_id": self.chat_id,
-            "message_thread_id": self.message_thread_id,
+            "message_thread_id": 78,
             "text": message,
             "parse_mode": self.parse_mode,
         }
-        logger.info("ПЭЙЛОАД: %s", payload)
         response = requests.post(self.base_url + "/sendMessage", data=payload)
         if response.status_code != HTTPStatus.OK:
             logger.error(
